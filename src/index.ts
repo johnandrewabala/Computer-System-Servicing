@@ -32,13 +32,9 @@ WA.room.onEnterZone('nook', () => {
 
 WA.room.onLeaveZone('nook', closePopUp)
 
-WA.room.onEnterZone('entrance', () => {
-    currentPopup =  WA.ui.openPopup("entrancePopup","Welcome to CSS Laboratory! ",[{ label: "Go to website", className: "primary", callback: (popup) => { window.location.href = "https://www.google.com" popup.close(); } }]);
-})
+WA.room.onEnterZone('entrance', () => { currentPopup = WA.ui.openPopup("entrancePopup","Welcome to CSS Laboratory! ",[{ label: "Go to website", className: "primary", callback: (popup) => { WA.nav.openTab('https://www.youtube.com/watch?v=ujLXdT4ekjU'); popup.close(); } }]); });
 
 WA.room.onLeaveZone('entrance', closePopUp)
-
-
 
 
 function closePopUp(){

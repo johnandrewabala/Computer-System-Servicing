@@ -1,6 +1,6 @@
 /// <reference path="../node_modules/@workadventure/iframe-api-typings/iframe_api.d.ts" />
 
-WA.chat.sendChatMessage('Welcome to Computer Servicing Class!', 'Mr.Abala');
+WA.chat.sendChatMessage('Welcome to Computer System Servicing Class!', 'Mr.Abala');
 
 import {bootstrapExtra} from "@workadventure/scripting-api-extra";
 
@@ -33,10 +33,13 @@ WA.room.onEnterZone('nook', () => {
 WA.room.onLeaveZone('nook', closePopUp)
 
 WA.room.onEnterZone('entrance', () => {
-    currentPopup =  WA.ui.openPopup("entrancePopup","Welcome to CSS Laboratory! ",[]);
+    currentPopup =  WA.ui.openPopup("entrancePopup","Welcome to CSS Laboratory! ",[{ label: "Go to website", className: "primary", callback: (popup) => { window.location.href = "https://www.google.com" popup.close(); } }]);
 })
 
 WA.room.onLeaveZone('entrance', closePopUp)
+
+
+
 
 function closePopUp(){
     if (currentPopup !== undefined) {
